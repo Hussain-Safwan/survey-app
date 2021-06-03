@@ -1,0 +1,154 @@
+/* App */
+.App {
+  padding-bottom: 100px;
+}
+
+/* Top card */
+.top-card {
+  width: 80%;
+  margin: 50px auto;
+  display: flex;
+}
+.top-card .image {
+  width: 15%;
+}
+.top-card .image img {
+  width: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.top-card .texts {
+  padding: 25px;
+}
+.top-card .texts .username {
+  color: gray;
+}
+
+/* Chat area */
+.chat-area {
+}
+.chat-area .streamlist {
+  width: 80%;
+  margin: auto;
+}
+.chat-area .chatbox {
+  margin-top: 20px;
+  width: 58%;
+}
+.title a{
+  color: #666;
+}
+.title h5 {
+  cursor: pointer;
+  transition: 0.5s;
+}
+.title h5:hover {
+  color: #008ecc;
+}
+
+/* Chat box */
+.chatbox {
+  width: 50%;
+  margin: auto;
+  padding-top: 40px;
+}
+.chatbox .above-messages {
+  display: flex;
+  justify-content: space-between;
+}
+.above-messages .left {
+  display: flex;
+}
+.above-messages h5 {
+  padding: 0 10px;
+}
+.above-messages .image {
+  width: 9%;
+}
+.above-messages .image img {
+  width: 100%;
+  border-radius: 50%;
+}
+.chatbox .messages {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 30px;
+  max-height: 500px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.chatbox .bubble {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 15px;  
+}
+.chatbox .Green {
+  text-align: right;
+  padding: 5px;
+}
+.chatbox .Green span {
+  background-color: lightseagreen;
+  color: #fff;
+} 
+.chatbox .Gray {
+  padding: 5px;
+}
+.chatbox .Gray span {
+  background-color: #ddd;
+}
+
+/* Type area */
+.type-area {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 15px;
+}
+.type-area textarea {
+  height: 100px;
+  border: none;
+}
+.type-area textarea:focus {
+  outline: none;
+}
+.type-area p {
+  text-align: right;
+  padding: 15px;
+}
+.type-area p i {
+  cursor: pointer;
+}
+
+.collection-item {
+  cursor: pointer;
+}
+.collection-item:hover {
+  background-color: #eee;
+}
+
+/* Media queries */
+@media only screen and (max-width: 600px) {
+  .chatbox {
+    width: 90%;
+    margin: auto;
+    padding-top: 10px;
+  }
+  .chatbox .title {
+    font-size: 12px;
+  }
+  .chatbox .messages {
+    max-height: 400px;
+  }
+  
+  .type-area {
+    height: 80px;
+  }
+  .type-area textarea {
+    height: 50px;
+  }.type-area p {
+    padding: 0;
+  }
+}

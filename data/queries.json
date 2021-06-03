@@ -1,0 +1,34 @@
+[
+  {
+    "question": "How is the weather today?",
+    "type": "free",
+    "options": []
+  },
+  {
+    "question": "Should the exams be taken online?",
+    "type": "scq",
+    "options": [
+      "Yes",
+      "No",
+      "Wait until the time is right"
+    ]
+  },
+  {
+    "question": "Which are your favourite domestic holiday destinations?",
+    "type": "mcq",
+    "options": [
+      "Cox's Bazaar",
+      "Sylhet",
+      "Sajek"
+    ]
+  },
+  {
+    "question": "Which are the worst domestic holiday destinations?",
+    "type": "mcq",
+    "options": [
+      "Sunderbans",
+      "Srimangal",
+      "Sajek"
+    ]
+  }
+]

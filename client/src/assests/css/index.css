@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+.page-wrapper {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.page-wrapper input[type='text'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.page-wrapper .content-wrapper .final {
+  margin-top: 20px;
+}
+
+.page-wrapper .content-wrapper .final p {
+  text-align: center;
+}
+
+.page-wrapper .content-wrapper .final p button {
+  padding: 15px;
+  background-color: lightseagreen;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.page-wrapper .content-wrapper .box {
+  width: 50%;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.page-wrapper .content-wrapper .box .question-space {
+  padding: 10px 0;
+}
+
+.page-wrapper .content-wrapper .box .question-space .question {
+  font-size: 25px;
+  font-weight: 800;
+  color: gray;
+}
+
+.page-wrapper .content-wrapper .box .question-space .question p {
+  text-align: center;
+}
+
+.page-wrapper .content-wrapper .box .answer-space {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.page-wrapper .content-wrapper .box .answer-space .free, .page-wrapper .content-wrapper .box .answer-space .scq, .page-wrapper .content-wrapper .box .answer-space .mcq {
+  width: 75%;
+  margin: auto;
+}
+
+.page-wrapper .content-wrapper .box .answer-space .level {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 15px;
+}
+
+.page-wrapper .content-wrapper .box .footer {
+  padding: 20px 0;
+}
+
+.page-wrapper .content-wrapper .box .footer .buttons {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page-wrapper .content-wrapper .box .footer .buttons button {
+  padding: 10px;
+  background-color: #87ceeb;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+/*# sourceMappingURL=index.css.map */

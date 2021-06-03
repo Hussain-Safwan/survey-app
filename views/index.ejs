@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="/src/assests/css/index.css">
+<body>
+    
+    <div class="page-wrapper">
+        <div class="content-wrapper">
+            <div class="box">
+                <div class="question-space">
+                    <div class="question" id="question">
+                        <p>How's the weather today?</p>
+                    </div>
+                </div>
+                <div class="answer-space" id="answer-space">
+                        
+                </div>
+                <div class="footer">
+                    <div class="buttons">
+                        <div class="btn-right"><button>Previous</button></div>
+                        <div class="btn-left"><button id="next">Next</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+<script>
+    let data = null
+    let current = 0
+    $.get('/api/v1/queries', res => {
+        data = res
+        show(current)
+    })
+    
+    $('#next').click(e => {
+        current++
+        show(current)
+    })
+
+    const show = (idx) => {
+        $('#question.p').html(data[idx].question)
+        $('#answer-space').empty()
+        console.log(data[idx].question)
+        if (data[idx].type == 'free') {
+            $('#answer-space' ).append(`
+        <div class="free">
+                            <input type="text">
+                        </div>
+        `)
+        } else if (data[idx].type == 'scq') {
+            
+        } else {
+
+        }
+        $('#answer-space' ).append(`
+        <div class="free">
+                            <input type="text">
+                        </div>
+                        <div class="scq">
+                            <div class="level">
+                                <div class="option">
+                                    <input type="radio" name="weather" id="good" value="good">
+                                    <label for="good">Good</label>
+                                </div>
+                                <div class="option">
+                                    <input type="radio" name="weather" id="bad" value="bad">
+                                    <label for="bad">Bad</label>
+                                </div>
+                                
+                            </div>
+                            <div class="level">
+                                <div class="option">
+                                    <input type="radio" name="weather" id="so so" value="so so">
+                                    <label for="so so">So So</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mcq">
+                            <div class="level">
+                                <div class="option">
+                                    <input type="checkbox" name="weather-mcq" id="good-mcq" value="good">
+                                    <label for="good-mcq">Good</label>
+                                </div>
+                                <div class="option">
+                                    <input type="checkbox" name="weather-mcq" id="bad-mcq" value="bad">
+                                    <label for="bad-mcq">Bad</label>
+                                </div>
+                                
+                            </div>
+                            <div class="level">
+                                <div class="option">
+                                    <input type="checkbox" name="weather-mcq" id="so so-mcq" value="so so">
+                                    <label for="so so-mcq">So So</label>
+                                </div>
+                            </div>
+                        </div>
+        `)
+    }
+</script>
+
+</html>

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+.page-wrapper {
+  font-family: 'Montserrat', sans-serif;
+
+  input[type='text'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  input[type='radio'] {
+
+  }
+
+  .content-wrapper {
+    .final {
+      margin-top: 20px;
+      p {
+        text-align: center;
+        button {
+            padding: 15px;
+            background-color: lightseagreen;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 18px;
+        }
+      }
+    }
+    .box {
+      width: 50%;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin: auto;
+      margin-top: 150px;
+
+      .question-space {
+        padding: 10px 0;
+        .question {
+          font-size: 25px;
+          font-weight: 800;
+          color: gray;
+          p {
+            text-align: center;
+          }
+        }
+      }
+
+      .answer-space {
+        padding: 10px 0;
+        font-size: 22px;
+        .free, .scq, .mcq {
+          width: 75%;
+          margin: auto;
+        }
+        .level {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 15px;
+        }
+      }
+
+      .footer {
+        padding: 20px 0;
+        .buttons {
+          width: 80%;
+          margin: auto;
+          display: flex;
+          justify-content: space-between;
+
+          button {
+            padding: 10px;
+            background-color: #87ceeb;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
