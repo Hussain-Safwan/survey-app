@@ -7,6 +7,7 @@ Follow the following steps to download the project and install the required depe
 1. ```npm i```
 2. ```npm i --prefix client```
 3. ```npm run dev```
+
 The final command should automatically open the user interface on http://localhost:3000
 
 ### Using the app
