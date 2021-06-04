@@ -4,9 +4,11 @@ This is an online survey app that both allows users to present their valuable th
 
 ### Download and installation
 Follow the following steps to download the project and install the required dependencies,
-1. ```npm i```
-2. ```npm i --prefix client```
-3. ```npm run dev```
+1. Clone the repository
+2. Add a *.env file* containing the *Mongo Connection* string
+3. ```npm i```
+4. ```npm i --prefix client```
+5. ```npm run dev```
 
 The final command should automatically open the user interface on http://localhost:3000
 
