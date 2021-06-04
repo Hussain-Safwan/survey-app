@@ -5,7 +5,13 @@
   .content-wrapper {
     width: 80%;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 100px;
+
+    .heading {
+      font-size: 25px;
+      padding: 0 15px;
+    }
+
     .create {
       padding: 15px ;
       font-size: 25px;

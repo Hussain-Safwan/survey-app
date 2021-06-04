@@ -19,61 +19,62 @@ const Survey = props => {
   })
   const [msg, setMsg] = useState(null)
 
+  const [nextDisabled, setNextDisabled] = useState(false)
+
   useEffect(() => {
-    const config = {
-      headers: {
-        'x-auth-token': localStorage.getItem('token'),
-      },
-    };
     const id = props.location.state
-    console.log(id)
     if (state.data.length == 0) {
-      const data = axios.get('/api/v1/user/queries', config).then(res => {
+      const data = axios.get('/api/v1/user/queries').then(res => {
         const data = res.data
-        console.log(data)
         let temp = {...state}
         temp.id = data._id
         temp.title = data.title
         temp.data = data.questions
         temp.upto = data.length-1
-        temp.answers = new Array(data.length).fill({
-          index: null,
-          type: null,
-          value: ''
-        })
+        temp.answers = new Array(data.questions.length).fill({})
         setState(temp)
       })
     }
   }, [])
 
-  const next = () => {
-    let temp = { ...state }
-    console.log(temp.upto, temp.index)
-    if (temp.index == temp.upto || state.index == state.data.length-1) {
-      console.log('end reached')
+const next = e => {
+  let temp = { ...state }
+  if (temp.data[temp.index].type == 'scq') {
+    const option = temp.answers[temp.index].value
+    if (typeof(option) == 'undefined') {
+      return
+    }
+    let jump = temp.data[temp.index].jumps.find(j => j.option == option)
+
+    if (jump.over) {
       temp.end = true
       setState(temp)
       return
     }
 
-    if (temp.data[temp.index].type == 'scq') {
-      const jump = temp.data[temp.index].jumps.find(jump => jump.option == temp.answers[temp.index].value)
-      if (jump.over == true) {
-        temp.end = true
-        setState(temp)
-        return
-      }
-      temp.index = jump.start
-      temp.upto = jump.end
+    temp.index = jump.start
+    temp.upto = jump.end
+
+    setState(temp)
+  } else {
+    if (temp.index >= temp.data.length-1) {
+      console.log('break')
+      temp.end = true
       setState(temp)
-      console.log('>>', temp.upto, temp.index)
       return
-    } else {
-      temp.index++
-      setState(temp)
     }
-    
+     temp.index++
+    setState(temp)
   }
+
+  if (temp.index == temp.upto && temp.data[temp.index].type != 'scq') {
+    temp.end = true
+    setState(temp)
+    return
+  }
+  console.log('index, upto', temp.index, temp.upto)
+
+}
 
   const handleChanges = e => {
     let temp = { ...state }
@@ -130,6 +131,12 @@ const Survey = props => {
   } 
 
   const RenderSwitch = () => {
+    if (state.index >= state.data.length) {
+      let temp = { ...state }
+      temp.end = true
+      setState(temp)
+      return
+    }
     const type = state.data[state.index].type
     const data = state.data[state.index]
     let jsx = null
@@ -200,9 +207,10 @@ const Survey = props => {
               <div className="footer">
                   <div className="buttons">
                       <div className="btn-right">
-                        {/* <button onClick={previous} disabled={state.index == 0 ? true : false}>Previous</button> */}
                         </div>
-                      <div className="btn-left"><button onClick={next} >Next</button></div>
+                      <div className="btn-left"><button 
+                      disabled={state.end}
+                      onClick={next} >Next</button></div>
                   </div>
               </div>
           </div>

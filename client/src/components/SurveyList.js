@@ -30,6 +30,9 @@ const SurveyList = () => {
   return (
     <div className='survey-list-page-wrapper'> 
       <div className='content-wrapper'>
+      <div className='heading'>
+        Surveys
+      </div>
         <div className='content'>
           {
             state.surveys.map((survey, i) => (

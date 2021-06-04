@@ -7,7 +7,6 @@ const Response = require('../models/response')
 
 router.post('/survey', async (req, res) => {
   try {
-    console.log(req.body)
     const { data } = req.body
     const obj = new Survey(data)
     await obj.save()

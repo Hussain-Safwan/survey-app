@@ -18,7 +18,6 @@ router.get('/queries', async (req, res) => {
 
 router.post('/survey', async (req, res) => {
   const data = new Response(req.body)
-  console.log(data)
   await data.save()
   res.json({
     status: true,
