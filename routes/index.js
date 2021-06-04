@@ -3,15 +3,20 @@ const router = express.Router();
 const fs = require('fs')
 const path = require('path')
 const Response = require('../models/response')
+const Survey = require('../models/survey')
 
-router.get('/queries', async (req, res) => {
-  let data = await fs.readFileSync(path.resolve('data', 'queries.json'), 'utf8')
-  data = JSON.parse(data)
-
+router.get('/surveys', async (req, res) => {
+  let data = await Survey.find()
   res.json(data)
 })
 
-router.post('/user/survey', async (req, res) => {
+router.get('/queries', async (req, res) => {
+  let data = await Survey.find()
+  data = data[data.length-1]
+  res.json(data)
+})
+
+router.post('/survey', async (req, res) => {
   const data = new Response(req.body)
   console.log(data)
   await data.save()

@@ -11,15 +11,25 @@
       "Yes",
       "No",
       "Wait until the time is right"
+    ],
+    "jumps": [
+      {"option": "Yes", "start": 2, "end": 3, "over": false}, 
+      {"option": "No", "start": 4, "end": 5, "over": false},
+      {"option": "Wait until the time is right", "over": true}
     ]
   },
   {
     "question": "Which are your favourite domestic holiday destinations?",
-    "type": "mcq",
+    "type": "scq",
     "options": [
       "Cox's Bazaar",
       "Sylhet",
       "Sajek"
+    ],
+    "jumps": [
+      {"option": "Cox's Bazaar", "start": 5, "end": 8, "over": false}, 
+      {"option": "Sylhet", "start": 4, "end": 5, "over": true},
+      {"option": "Sajek", "over": true}
     ]
   },
   {
@@ -29,6 +39,42 @@
       "Sunderbans",
       "Srimangal",
       "Sajek"
+    ]
+  },
+  {
+    "question": "What's your name?",
+    "type": "mcq",
+    "options": [
+      "Ishrack",
+      "Ifsan",
+      "Irrina"
+    ]
+  },
+  {
+    "question": "Why CSE?",
+    "type": "free",
+    "options": [
+    ]
+  },
+  {
+    "question": "When is it over?",
+    "type": "free",
+    "options": [
+    ]
+  },
+  {
+    "question": "Where did they go??",
+    "type": "mcq",
+    "options": [
+      "away",
+      "up there",
+      "nowhere"
+    ]
+  },
+  {
+    "question": "Why would you stay???",
+    "type": "free",
+    "options": [
     ]
   }
 ]

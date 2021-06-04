@@ -14,7 +14,14 @@
 
   }
 
+  .lower-inputs {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
   .content-wrapper {
+    margin-top: 50px;
     .final {
       margin-top: 20px;
       p {
@@ -34,8 +41,7 @@
       border: 1px solid #ddd;
       border-radius: 10px;
       margin: auto;
-      margin-top: 150px;
-
+      margin-top: 0;
       .question-space {
         padding: 10px 0;
         .question {

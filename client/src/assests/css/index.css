@@ -10,6 +10,19 @@
   border-radius: 5px;
 }
 
+.page-wrapper .lower-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.page-wrapper .content-wrapper {
+  margin-top: 50px;
+}
+
 .page-wrapper .content-wrapper .final {
   margin-top: 20px;
 }
@@ -32,7 +45,7 @@
   border: 1px solid #ddd;
   border-radius: 10px;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 0;
 }
 
 .page-wrapper .content-wrapper .box .question-space {

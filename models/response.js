@@ -5,6 +5,7 @@ const response = mongoose.Schema({
     type: String,
     required: [true]
   },
+  survey_id: String,
   answers: [],
   createdAt: {
     type: Date,

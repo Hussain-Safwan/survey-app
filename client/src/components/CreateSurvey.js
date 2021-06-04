@@ -9,7 +9,8 @@ const CreateSurvey = () => {
     questions: [{
       question: '',
       type: 'free',
-      options: []
+      options: [], 
+      jumps: [{ }]
     }]
   })
 
@@ -38,15 +39,33 @@ const CreateSurvey = () => {
     setState(temp)
   }
 
-  const handleOptionChanges = (e, i, j) => {
+  const handleMCQOptions = (e, i, j) => {
     let temp = { ...state }
     temp.questions[i].options[j] = e.target.value
+    setState(temp)
+  }
+
+  const handleSCQOptions = (e, i, j) => {
+    let temp = { ...state }
+    let jump = temp.questions[i].jumps[j]
+    console.log(parseInt(e.target.value), e.target.value)
+    if (e.target.name == 'options-start') {
+      jump.start = parseInt(e.target.value)
+    } else if (e.target.name == 'options-end') {
+      jump.end= parseInt(e.target.value)
+    } else if (e.target.name == 'options-over') {
+      jump.over = e.target.checked 
+    } else {
+      temp.questions[i].options[j] = e.target.value
+      jump.option = e.target.value
+    }
     setState(temp)
   }
 
   const addOption = (e, i) => {
     let temp = { ...state }
     temp.questions[i].options.push('')
+    temp.questions[i].jumps.push({})
     setState(temp)
   }
 
@@ -55,7 +74,8 @@ const CreateSurvey = () => {
     temp.questions.push({
       question: '',
       type: 'free',
-      options: []
+      options: [], 
+      jumps: [{}]
     })
     setState(temp)
   }
@@ -77,6 +97,7 @@ const CreateSurvey = () => {
   }
 
   const submit = e => {
+    console.log(state)
     setSubmitBtn(true)
     const config = {
       headers: {
@@ -144,9 +165,37 @@ const CreateSurvey = () => {
                 {
                     state.questions[i].options.map((option, j) => (
                         <div className='option'>
-                            <input type='text' name='options'
-                             value={state.questions[i].options[j]}
-                              onChange={e => handleOptionChanges(e, i, j)}/>
+                            {
+                              state.questions[i].type == 'mcq' ? (
+                                <input type='text' name='options'
+                                  value={state.questions[i].options[j]}
+                                  onChange={e => handleMCQOptions(e, i, j)}/>
+                              ) : (
+                                <div>
+                                  <input type='text' name='options'
+                                  value={state.questions[i].options[j]}
+                                  onChange={e => handleSCQOptions(e, i, j)}/>
+                                  <br />
+                                  <div className='lower-inputs'>
+                                    <input type='number' name='options-start'
+                                    value={state.questions[i].jumps[j].start}
+                                    onChange={e => handleSCQOptions(e, i, j)}/>
+                                    <input type='number' name='options-end'
+                                    value={state.questions[i].jumps[j].end}
+                                    onChange={e => handleSCQOptions(e, i, j)}/>
+                                    <br />
+                                    <div>
+                                      <input type='checkbox' 
+                                      name='options-over' id={ state.questions[i].options[j] }
+                                      value={state.questions[i].jumps[j].over}
+                                      onChange={e => handleSCQOptions(e, i, j)}
+                                      />
+                                      <label htmlFor={ state.questions[i].options[j] }>Over?</label>
+                                    </div>
+                                  </div>
+                                </div>
+                              )
+                            }
                             <button className='btn delete' onClick={e => deleteOption(e, i, j)}>Delete</button>
                           </div>
                       ))
@@ -178,7 +227,7 @@ const CreateSurvey = () => {
             <button className='btn submit' onClick={submit} disabled={submitBtn}>Submit</button>
             {
               alert.status == null ? null : (
-              <div style={{ marginTop: '20px', color: 'lightseagreen', fontWeight: 800 }}>{ alert.msg }</div>
+              <div style={{ marginTop: '20px', fontWeight: 800 }}>{ alert.msg }</div>
               )
             }
           </p>

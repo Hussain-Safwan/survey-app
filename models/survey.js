@@ -1,19 +1,22 @@
 const mongoose = require('mongoose')
 
 const survey = mongoose.Schema({
-  name: {
+  title: {
     type: String,
     required: [true]
   },
   questions: [
     {
       question: {
-        type: String
+        type: String, 
+        required: [true]
       },
       type: {
-        type: String
+        type: String,
+        required: [true]
       },
-      options: []
+      options: [], 
+      jumps: []
     }
   ],
   createdAt: {

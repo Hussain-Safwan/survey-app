@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+.survey-list-page-wrapper {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.survey-list-page-wrapper .content-wrapper {
+  width: 80%;
+  margin: auto;
+  margin-top: 150px;
+}
+
+.survey-list-page-wrapper .content-wrapper .create {
+  padding: 15px;
+  font-size: 25px;
+  border-bottom: 1px solid #eee;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.survey-list-page-wrapper .content-wrapper .create span {
+  color: lightseagreen;
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+.survey-list-page-wrapper .content-wrapper .create:hover {
+  background-color: #eee;
+}
+
+.survey-list-page-wrapper .content-wrapper .content {
+  margin-top: 30px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
+}
+
+.survey-list-page-wrapper .content-wrapper .content .box {
+  border: 1px solid #ddd;
+  width: 90%;
+  border-radius: 7.5px;
+  cursor: pointer;
+}
+
+.survey-list-page-wrapper .content-wrapper .content .box .top {
+  height: 250px;
+}
+
+.survey-list-page-wrapper .content-wrapper .content .box .footer {
+  padding: 0 12.5px;
+}
+
+.survey-list-page-wrapper .content-wrapper .content .box .footer .title {
+  font-size: 15px;
+}
+
+.survey-list-page-wrapper .content-wrapper .content .box .footer .subtitle {
+  font-size: 13.5px;
+  color: gray;
+  margin-top: -5px;
+}
+/*# sourceMappingURL=surveyList.css.map */
