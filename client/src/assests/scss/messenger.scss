@@ -1,0 +1,298 @@
+.page-wrapper {
+  background-color: #242526;
+  font-family: sans-serif;
+  input {
+    color: #e4e6eb
+  }
+  .nav {
+    height: 50px;
+    border-bottom: 1px solid #3e4042;
+  }
+
+  .editor {
+    width: 80%;
+    margin: auto;
+    padding: 15px 0;
+    border-bottom: 1px solid #3e4042;
+    .item {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      .name-input {
+        width: 70%;
+      }
+      .hour-input {
+        width: 20%;
+      }
+    }
+    .submit-btn {
+      margin: auto;
+      button {
+        padding: 5px 10px;
+        border-radius: 20px;
+        background-color: #666;
+        border: none;
+        color: #e4e6eb;
+      }
+    }
+    input {
+      width: 95%;
+            margin: auto;
+            background-color: #3e4042;
+            border-radius: 20px;
+            border: 1px solid #3e4042;
+            padding: 7.5px;
+    }
+  }
+
+  .content-wrapper {
+    display: flex;
+    margin-top: 0;
+    width: 100%;
+
+    .MessageList {
+      width: 20%;
+      // overflow-y: scroll;
+      // max-height: 700px;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px;
+        font-weight: 600;
+        font-size: 21.5px;
+        color: #fff;
+
+        .right {
+          display: flex;
+          width: 40%;
+          justify-content: space-between;
+          span {
+            background-color: #3e4042;
+            border-radius: 50%;
+            padding: 5px;
+            cursor: pointer;
+            font-size: 21.5px;
+          }
+          span:hover {
+            background-color: #4b4e50;
+          }
+        }
+      }
+
+      .search-box {
+        // margin-top: 20px;
+        padding: 0px 15px;
+        input {
+          width: 95%;
+          margin: auto;
+          background-color: #3e4042;
+          border-radius: 20px;
+          border: 1px solid #3e4042;
+          padding: 7.5px;
+        }
+        input::placeholder {
+          color: #aaa;
+        }
+      }
+
+      .list {
+        margin-top: 30px;
+
+        .each {
+          display: flex;
+          // width: 90%;
+          // margin: auto;
+          padding: 5px 15px;
+          cursor: pointer;
+          .image {
+            width: 17.5%;
+            border-radius: 50%;
+            img {
+              width: 100%;
+              border-radius: 50%;
+            }
+          }
+
+          .text {
+            padding: 10px;
+
+            .name {
+              color: #e4e6eb;
+              font-size: 15px;
+            }
+
+            .message {
+              color: #b0b3b8;
+              padding: 5px 0;
+              font-size: 13px;
+            }
+          }
+        }
+
+        .each:hover {
+          background-color: #4b4e50;
+        }
+      }
+    }
+
+    .Conversation {
+      width: 60%;
+      border: 1px solid #3e4042;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 9px 12px;
+        box-shadow: 0px 0px 3px 0px #111;
+
+        .left {
+          display: flex;
+          .image {
+            width: 15%;
+            img {
+              width: 100%;
+              border-radius: 50%;
+            }
+          }
+          .name {
+            font-size: 17px;
+            color: #e4e6eb;
+            font-weight: 800;
+            padding: 6px 10px;
+          }
+        }
+
+        .right {
+          width: 15%;
+          display: flex;
+          justify-content: space-between;
+          span {
+            font-size: 25px;
+            color: blue;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .messages {
+        width: 98%;
+        margin: auto;
+        overflow-y: scroll;
+        height: 700px;
+
+        .you {
+          margin-top: 10px;
+          display: inline-block;
+            padding: 7.5px 12px;
+            border-radius: 20px;
+            background-color: #3e4042;
+            color: #e4e6eb;
+            font-size: 13.5px;
+            max-width: 25%;
+        }
+
+        .me {
+          display: flex;
+          justify-content: flex-end;
+          p {
+            display: inline-block;
+            padding: 7.5px 12px;
+            border-radius: 20px;
+            background-color: #0084ff;
+            color: #e4e6eb;
+            font-size: 13.5px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: 0;
+            max-width: 25%;
+          }
+        }
+      }
+
+      .footer {
+        display: flex;
+        padding: 7.5px 5px;
+
+        .buttons {
+          width: 15%;
+          display: flex;
+          justify-content: space-around;
+          span {
+            color: blue;
+            font-size: 25px;
+            margin-top: 5px;
+            cursor: pointer;
+          }
+        }
+
+        .msg-input {
+          width: 78%;
+          input {
+            width: 95%;
+            margin: auto;
+            background-color: #3e4042;
+            border-radius: 20px;
+            border: 1px solid #3e4042;
+            padding: 7.5px;
+          }
+        }
+
+        .send-btn {
+          width: 1%;
+          span {
+            margin-top: 5px;
+            font-size: 25px;
+            color: rgb(238, 199, 69);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .Accessories {
+      width: 20%;
+
+      .top {
+        margin: auto;
+        padding: 20px 0;
+
+        .image {
+          width: 30%;
+          margin: auto;
+          img {
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+
+        .name {
+          font-size: 17px;
+          color: #e4e6eb;
+          font-weight: 400;
+
+          p {
+            text-align: center;
+          }
+        }
+      }
+
+      .actions {
+        .each {
+          width: 98%;
+          margin: auto;
+          font-size: 15px;
+          color: #e4e6eb;
+          padding: 15px 5px;
+          font-weight: 800;
+          cursor: pointer;
+          border-radius: 5px;
+        }
+
+        .each:hover {
+          background-color: #4b4e50;
+        }
+      }
+    }
+  }
+}
